@@ -1,5 +1,5 @@
 # dbg_hex
-display dbg result in hexadecimal {:#x?} format.
+display dbg result in hexadecimal `{:#x?}` format.
 
 # usage
 Replace `dbg!()` with `dbg_hex!()`
