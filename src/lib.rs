@@ -39,11 +39,10 @@ macro_rules! dbg_hex {
     };
 }
 
-
 #[cfg(test)]
 mod tests {
     #[test]
     fn it_works() {
-        let a = dbg_hex!(0x16 + 0x16);
+        dbg_hex!(0x16 + 0x16);
     }
 }
