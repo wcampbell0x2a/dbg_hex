@@ -35,7 +35,7 @@ macro_rules! dbg_hex {
         }
     };
     ($($val:expr),+ $(,)?) => {
-        ($(dbg!($val)),+,)
+        ($($crate::dbg_hex!($val)),+,)
     };
 }
 
@@ -44,5 +44,10 @@ mod tests {
     #[test]
     fn it_works() {
         dbg_hex!(0x16 + 0x16);
+    }
+    
+    #[test]
+    fn it_works_multiple() {
+        dbg_hex!(0x16 + 0x16, 0x32 - 0x16);
     }
 }
