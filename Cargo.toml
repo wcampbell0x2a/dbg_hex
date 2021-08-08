@@ -1,6 +1,6 @@
 [package]
 name = "dbg_hex"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["wcampbell"]
 edition = "2018"
 repository = "https://github.com/wcampbell0x2a/dbg_hex"
