@@ -21,15 +21,15 @@ macro_rules! dbg_hex {
     // `$val` expression could be a block (`{ .. }`), in which case the `eprintln!`
     // will be malformed.
     () => {
-        eprintln!("[{}:{}]", file!(), line!());
+        eprintln!("[{}:{}:{}]", file!(), line!(), column!());
     };
     ($val:expr $(,)?) => {
         // Use of `match` here is intentional because it affects the lifetimes
         // of temporaries - https://stackoverflow.com/a/48732525/1063961
         match $val {
             tmp => {
-                eprintln!("[{}:{}] {} = {:#x?}",
-                    file!(), line!(), stringify!($val), &tmp);
+                eprintln!("[{}:{}:{}] {} = {:#x?}",
+                    file!(), line!(), column!(), stringify!($val), &tmp);
                 tmp
             }
         }
